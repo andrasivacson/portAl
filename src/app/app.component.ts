@@ -29,8 +29,8 @@ export class AppComponent  {
 
   login() {
     this.af.auth.login({
-      provider: AuthProviders.Anonymous,
-      method: AuthMethods.Anonymous
+      provider: AuthProviders.Google,
+      method: AuthMethods.Popup
     });
   }
 
@@ -40,7 +40,6 @@ export class AppComponent  {
   }
 
   Remove(item: any) {
-    this.af.database.list('/users/' + item.$key).remove();
-    this.invitedUser = '';
+    this.af.database.object('/users/' + item.$key).remove();
   }
 }
