@@ -1,0 +1,14 @@
+{
+  "name": "portal_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Andras Ivacson",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^3.7.8"
+  }
+}
