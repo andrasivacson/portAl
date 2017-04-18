@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2017-4-18: Created with FontForge (http://fontforge.org)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20160405 at Tue Apr 18 23:10:49 2017
+ By Apache
+Copyright (c) 2017, Apache
+</metadata>
+<defs>
+<font id="Flaticon" horiz-adv-x="512" >
+  <font-face 
+    font-family="Flaticon"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="76.5361 -64 435.465 448"
+    underline-thickness="25.6"
+    underline-position="-51.2"
+    unicode-range="U+0020-F102"
+  />
+    <missing-glyph />
+    <glyph glyph-name="space" unicode=" " horiz-adv-x="200" 
+ />
+    <glyph glyph-name="uniF102" unicode="&#xf102;" 
+d="M191.957 448l216.392 -38.9844v-370.452v-63.6602l-216.392 -38.9033v456.773h-55.6592v-417.87h-32.6465v450.517h88.3057v22.5801zM231.765 174.453c7.27441 0 13.1719 7.67285 13.1719 17.1387c0 9.46387 -5.89746 17.1377 -13.1719 17.1377
+c-7.27344 0 -13.1709 -7.67383 -13.1709 -17.1377c0 -9.46582 5.89746 -17.1387 13.1709 -17.1387z" />
+    <glyph glyph-name="uniF100" unicode="&#xf100;" 
+d="M76.5361 448h358.929v-512l-358.929 0.621094v511.379zM110.289 -29.6826l291.419 -0.504883v60.7393h-11.5312v-49.5068h-268.353v421.938h268.352v-49.5088h11.5312v60.7695h-291.418v-443.927zM390.176 300.969v-217.908h11.5312v217.908h-11.5312zM177.332 192.014
+c0 9.78711 -7.93457 17.7217 -17.7217 17.7217s-17.7217 -7.93457 -17.7217 -17.7217c0 -9.78516 7.93457 -17.7197 17.7217 -17.7197s17.7217 7.93457 17.7217 17.7197z" />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" 
+d="M206.902 448l216.822 -39.1748l-0.223633 -433.92l-216.599 -38.9043v37.7695l-118.629 0.0966797v436.813h118.629v37.3193zM242.827 209.14c-7.27441 0 -13.1729 -7.67383 -13.1719 -17.1387c0 -9.46777 5.89648 -17.1396 13.1719 -17.1396
+s13.1719 7.67188 13.1719 17.1396c0 9.46484 -5.89746 17.1387 -13.1719 17.1387zM123.495 9.06055l83.4072 -0.0673828v366.466h-83.4072v-366.398z" />
+  </font>
+</defs></svg>

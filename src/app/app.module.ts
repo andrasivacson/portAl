@@ -1,13 +1,18 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule } from 'angularfire2';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdProgressSpinnerModule} from '@angular/material';
 import 'hammerjs';
 
-import { AppComponent }  from './app.component';
-import { AngularFireModule } from 'angularfire2';
+import { RouterModule }   from '@angular/router';
 
-import {MaterialModule} from '@angular/material';
+import { AppComponent }  from './app.component';
+import { MaterialModule } from '@angular/material';
+import { DoorComponent } from './door/door.component';
+import { AdminComponent } from './admin/admin.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 
 export const firebaseConfig = {
@@ -19,11 +24,27 @@ export const firebaseConfig = {
     messagingSenderId: "375358890598"
 };
 
+const routes =[{
+  path: '',
+  component: StartPageComponent
+},
+{
+  path: 'admin',
+  component: AdminComponent
+},
+{
+  path: 'door',
+  component: DoorComponent
+}];
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, AngularFireModule.initializeApp(firebaseConfig),
-    MaterialModule.forRoot()],
+  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MdProgressSpinnerModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    MaterialModule.forRoot(),
+    RouterModule.forRoot(routes)],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ AppComponent, DoorComponent, AdminComponent, StartPageComponent ],
+  bootstrap:    [ AppComponent ],
+  providers:    [ ]
 })
 export class AppModule { }
