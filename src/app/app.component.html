@@ -1,11 +1,10 @@
-
-<md-sidenav-container>
+<md-sidenav-container *ngIf="userService.userName; else welcomeScreen">
 
   <md-sidenav #sidenav mode="side" class="app-sidenav">
     <md-list>
-      <md-list-item md-button routerLink="/"> Home </md-list-item>
-      <md-list-item md-button routerLink="/door"> My door </md-list-item>
-      <md-list-item md-button routerLink="/admin"> Admin page </md-list-item>
+      <md-list-item><md-button routerLinkActive="mat-button-toggle-checked" routerLink="/doorList"> Home </md-button></md-list-item>
+      <md-list-item><md-button routerLinkActive="mat-button-toggle-checked" routerLink="/door"> My door </md-button></md-list-item>
+      <md-list-item><md-button routerLinkActive="mat-button-toggle-checked" routerLink="/admin"> Admin page </md-button></md-list-item>
     </md-list>
   </md-sidenav>
 
@@ -17,10 +16,9 @@
 
     PortAl
 
-    <span class="app-toolbar-filler"></span>
-    <button  (click)="login()" *ngIf="!userService.userName" md-raised-button color="accent">Anonymous Login</button>
-    <span *ngIf="userService.userName">Logged in as: {{userService.userName}}</span>
-    
+    <span class="app-toolbar-filler"></span>    
+    <span>Logged in as: {{userService.userName}}</span>
+
   </md-toolbar>
   
   <div class="app-content">
@@ -28,3 +26,10 @@
   </div>
   
 </md-sidenav-container>
+
+<ng-template #welcomeScreen>  
+  <md-sidenav-container>
+    <h2>Welcome</h2>
+    <button  (click)="login()" *ngIf="!userService.userName" md-raised-button color="accent">Anonymous Login</button>
+  </md-sidenav-container>
+</ng-template>

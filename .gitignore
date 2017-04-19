@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/portal_node/public
 
 # dependencies
 **/node_modules

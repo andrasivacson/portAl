@@ -13,6 +13,7 @@ import { MaterialModule } from '@angular/material';
 import { DoorComponent } from './door/door.component';
 import { AdminComponent } from './admin/admin.component';
 import { StartPageComponent } from './start-page/start-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found-component';
 
 
 export const firebaseConfig = {
@@ -24,10 +25,7 @@ export const firebaseConfig = {
     messagingSenderId: "375358890598"
 };
 
-const routes =[{
-  path: '',
-  component: StartPageComponent
-},
+const routes =[
 {
   path: 'admin',
   component: AdminComponent
@@ -35,7 +33,11 @@ const routes =[{
 {
   path: 'door',
   component: DoorComponent
-}];
+},{
+  path: 'doorList',
+  component: StartPageComponent
+},
+{ path: '**', component: PageNotFoundComponent }];
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MdProgressSpinnerModule,
@@ -43,7 +45,7 @@ const routes =[{
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes)],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [ AppComponent, DoorComponent, AdminComponent, StartPageComponent ],
+  declarations: [ AppComponent, DoorComponent, AdminComponent, StartPageComponent, PageNotFoundComponent ],
   bootstrap:    [ AppComponent ],
   providers:    [ ]
 })
