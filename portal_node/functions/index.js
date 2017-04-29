@@ -23,3 +23,19 @@ exports.addMessage = functions.https.onRequest((req, res) => {
     res.redirect(303, snapshot.ref);
   });
 });
+
+exports.doorQuery = functions.https.onRequest((req, res) => {
+  // Grab the text parameter.
+  const original = req.query.text;
+  // Push it into the Realtime Database then send a response
+  admin.database().ref('/doors/-KhskZa0FNVogYdi51JS')
+  // .catch((reason) => {res.send(404, reason)})
+  .on("value", function(snapshot) {
+    console.log(snapshot.val());
+    res.setHeader('Content-type', 'application/json');
+    res.send(200, snapshot.val().isOpen 
+      ? {speech: 'The door is open', displayText: 'The door is open'}
+      : {speech: 'The door is closed', displayText: 'The door is closed'})
+  });
+ 
+});
