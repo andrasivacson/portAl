@@ -1,21 +1,31 @@
-<md-card  class="door-card">
-  <md-progress-spinner mode="indeterminate"></md-progress-spinner>
-  <i class="flaticon-closed-filled-rectangular-door"></i>
-  <i class="flaticon-opened-door-aperture"></i>
-  <i class="flaticon-open-exit-door"></i>
-</md-card>
+<md-sidenav-container *ngIf="userService.userName; else welcomeScreen" >
 
-<md-card>  
-  <md-input-container *ngIf="userService.userName">
-      <input mdInput type="email" id="inviteemail"  placeholder="Invite user" (keyup.enter)="Send($event.target.value)" [(ngModel)]="invitedUser">
-  </md-input-container>
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    <md-list>
+       <md-nav-list>
+        <a md-list-item routerLink="/door/main"> My door </a>
+      </md-nav-list>
+       <md-nav-list>
+        <a md-list-item routerLink="/door/admin"> Admin page </a>
+      </md-nav-list>
+    </md-list>
+  </md-sidenav>
 
-  <md-list class="user-list">        
-    <md-list-item *ngFor="let item of userList | async">
-      <md-checkbox [checked]="true">{{item.email}}</md-checkbox>
-      <button md-icon-button (click)="Remove(item)">
-          <md-icon color="accent">delete</md-icon>
-      </button>
-    </md-list-item>  
-  </md-list>    
-</md-card>
+  <md-toolbar color="primary">
+
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+
+    PortAl
+
+    <span class="app-toolbar-filler"></span>    
+    <span>Logged in as: {{userService.userName}}</span>
+
+  </md-toolbar>
+  
+  <div class="door-content">
+    <router-outlet></router-outlet>
+  </div>
+  
+</md-sidenav-container>

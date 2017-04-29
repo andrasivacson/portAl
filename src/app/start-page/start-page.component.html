@@ -1,3 +1,4 @@
-<p>
-  start-page works!
-</p>
+<md-sidenav-container>
+    <h2>Welcome</h2>
+    <button  (click)="userService.login()" *ngIf="!userService.userName" md-raised-button color="accent">Log in with google</button>
+  </md-sidenav-container>

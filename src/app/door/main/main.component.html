@@ -1,0 +1,19 @@
+<md-card  class="door-card">
+  <md-list>
+    <md-list-item (click)="ToggleDoor(door)">
+      <md-icon *ngIf="!doorLoading" md-list-icon class="door-icon mat-primary"
+        [ngClass]="{
+          'flaticon-closed-filled-rectangular-door': !(door | async)?.isOpen,
+          'flaticon-open-exit-door': (door | async)?.isOpen
+          }"></md-icon>
+        <md-progress-spinner *ngIf="doorLoading" md-list-icon mode="indeterminate" class="door-spinner"></md-progress-spinner>
+      <h2 md-line> {{(door | async)?.name}}</h2>      
+      <p *ngIf="!doorLoading"md-line>
+        <span style="width: auto;" class="mat-icon mat-accent">
+          <b>{{(door | async)?.isOpen ? 'opened' : 'closed'}}</b>
+        </span> {{(door | async)?.lastChangedOn | momentDate}} by {{(door | async)?.lastChangedBy}}
+      </p>
+      <p *ngIf="doorLoading" md-line><i>Loading ...</i></p>
+    </md-list-item>
+  </md-list>
+</md-card>

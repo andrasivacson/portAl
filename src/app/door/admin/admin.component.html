@@ -1,4 +1,19 @@
 
+<md-card>  
+  <md-input-container *ngIf="userService.userName">
+      <input mdInput type="email" id="inviteemail"  placeholder="Invite user" (keyup.enter)="Send($event.target.value)" [(ngModel)]="invitedUser">
+  </md-input-container>
+
+  <md-list class="user-list">        
+    <md-list-item *ngFor="let item of userList | async">
+      <md-checkbox [checked]="true">{{item.email}}</md-checkbox>
+      <button md-icon-button (click)="Remove(item)">
+          <md-icon color="accent">delete</md-icon>
+      </button>
+    </md-list-item>  
+  </md-list>    
+</md-card>
+<br>
 <!-- Container for the Table of content -->
   <md-card>
       <!-- div to display the generated Instance ID token -->
