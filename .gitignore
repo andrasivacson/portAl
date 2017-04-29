@@ -4,8 +4,7 @@
 /dist
 /tmp
 /out-tsc
-/portal_node/public
-
+!portal_node/public/.gitignore
 # dependencies
 **/node_modules
 
