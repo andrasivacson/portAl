@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
 import { UserService } from '../../user.service';
-import { User } from '../../app.interfaces';
 import { Observable } from 'rxjs/Observable';
 
 export interface Door {
     name: string;
     isOpen: string;
     lastChangedOn: Date;
-    lastChangedBy: User;
+    lastChangedBy: string;
 }
 
 @Component({
-  selector: 'app-door',
+  selector: 'door-view',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
@@ -34,14 +33,14 @@ export class MainComponent implements OnInit {
     });
   } 
 
-  ToggleDoor(door: FirebaseObjectObservable<Door>) {
+  ToggleDoor(door: FirebaseObjectObservable<Door>) { 
     // delayed display to avoid flickering
     let cancelId = setTimeout(_ =>this.doorLoading = true, 250);
     
     door.update({
         isOpen: !this.door_value.isOpen,
         lastChangedOn: (new Date).toISOString(),
-        lastChangedBy: this.userService.userName
+        lastChangedBy: this.userService.authenticatedUser.displayName
       }).then(_ => {
         (<any>window).clearTimeout(cancelId);
         this.doorLoading = false;

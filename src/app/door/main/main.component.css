@@ -1,10 +1,15 @@
 .door-card .door-icon {
-    margin-top: -22px;
+    width: 50px;
+    height: 50px;
 }
 .door-card .door-icon::before {
     font-size: 40px;
     margin: 0;
 }
-.door-spinner {
-    height: 36px;
+.door-card .door-spinner {
+    height: 50px;
+}
+
+.door-card .mat-list-item .mat-list-text {
+    padding: 0;
 }

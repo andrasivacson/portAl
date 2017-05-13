@@ -5,6 +5,7 @@ import { UserService } from './user.service';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
+  // UserService loaded early to do authentication
   providers: [UserService]
 })
 export class AppComponent  {

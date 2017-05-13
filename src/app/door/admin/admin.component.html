@@ -1,6 +1,6 @@
 
 <md-card>  
-  <md-input-container *ngIf="userService.userName">
+  <md-input-container>
       <input mdInput type="email" id="inviteemail"  placeholder="Invite user" (keyup.enter)="Send($event.target.value)" [(ngModel)]="invitedUser">
   </md-input-container>
 

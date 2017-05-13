@@ -7,18 +7,12 @@ md-sidenav-layout.m2app-dark {
   padding: 20px;
 }
 
-.door-content md-card {
-  margin: 20px;
-}
 
 .app-sidenav {
   padding: 10px;
   min-width: 100px;
 }
 
-.door-content md-checkbox {
-  margin: 10px;
-}
 
 .app-toolbar-filler {
   flex: 1 1 auto;
@@ -53,22 +47,10 @@ md-sidenav-layout.m2app-dark {
   right: 20px;
 }
 
-.app-spinner {
-  height: 30px;
-  width: 30px;
-  display: inline-block;
+.door-user {
+    line-height: 50px;
 }
-
-.app-input-icon {
-  font-size: 16px;
-}
-
-.app-list {
-  border: 1px solid rgba(0,0,0,0.12);
-  width: 350px;
-  margin: 20px;
-}
-
-.app-progress {
-  margin: 20px;
+img.door-user-avatar {
+    width: 32px;
+    border-radius: 50%;
 }

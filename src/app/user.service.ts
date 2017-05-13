@@ -3,22 +3,20 @@ import { FirebaseListObservable, AngularFire, AuthProviders, AuthMethods, Fireba
 
 @Injectable()
 export class UserService {
-  uid: string;
-  userName = null;
-  authenticationPromise: Promise<FirebaseAuthState>;
+  authenticatedUser: firebase.UserInfo;
+  authenticationPromise: Promise<firebase.UserInfo>;
 
   constructor(private af: AngularFire) {
-    let resolver = (value?: FirebaseAuthState)  => {};
-    this.authenticationPromise = new Promise<FirebaseAuthState>((resolve) => {
+    let resolver = (value?: firebase.UserInfo)  => {};
+    this.authenticationPromise = new Promise<firebase.UserInfo>((resolve) => {
       resolver = resolve;
     });
 
     this.af.auth.subscribe(auth => { 
       if(auth) {
-        this.userName = auth.anonymous ? 'Anonymous': auth.auth.displayName;
-        this.uid = auth.uid;
-
-        resolver(auth);
+        // TODO: remove hardcoded authentication
+        this.authenticatedUser = auth.google;
+        resolver(this.authenticatedUser);
       }
     });
   }

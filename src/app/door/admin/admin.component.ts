@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
 import { UserService } from '../../user.service';
-import { User } from '../../app.interfaces';
 
 @Component({
   selector: 'app-admin',
@@ -9,7 +8,7 @@ import { User } from '../../app.interfaces';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  userList: FirebaseListObservable<User[]>;
+  userList: FirebaseListObservable<firebase.UserInfo[]>;
   invitedUser: string = '';
 
   constructor(public af: AngularFire, public userService: UserService) {
